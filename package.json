@@ -1,0 +1,23 @@
+{
+  "name": "golfstatistics-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.0",
+    "graphql-compose": "^7.25.1",
+    "graphql-compose-mongoose": "^9.2.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "mongoose": "^5.12.2",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.7"
+  }
+}
