@@ -12,6 +12,7 @@ const roundScore = mongoose.model(
         putts: { type: [String] },
         fir: { type: [String] },
         gir: { type: [String] },
+        approachdistance: { type: [String] },
         penalties: { type: [String] },
         greenbunkers: { type: [String] },
         fwbunkers: { type: [String] },

@@ -35,7 +35,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(
-    '/graphql',
+    '/api',
     graphqlHTTP({
       schema: Schema,
       graphiql: true ,

@@ -6,6 +6,17 @@ const roundScore  = require('./../models/roundscoreModel')
 const courseModelTC = composeMongoose(course, {})
 const RoundTC = composeMongoose(roundScore, {})
 
+RoundTC.addRelation(
+	'course',
+	{
+	  resolver: () => courseModelTC.mongooseResolvers.findById(),
+	  prepareArgs: { // resolver `findByIds` has `_ids` arg, let provide value to it
+		_id: (source) => source.coursename,
+	  },
+	  projection: { coursename: true }, // point fields in source object, which should be fetched from DB
+	}
+  );
+
 schemaComposer.Query.addFields({	
     roundById: RoundTC.mongooseResolvers.findById(),
 	roundByIds: RoundTC.mongooseResolvers.findByIds(),
@@ -25,7 +36,7 @@ schemaComposer.Query.addFields({
 	courseDataLoaderMany: courseModelTC.mongooseResolvers.dataLoaderMany(),
 	courseCount: courseModelTC.mongooseResolvers.count(),
 	courseConnection: courseModelTC.mongooseResolvers.connection(),
-	coursePagination: courseModelTC.mongooseResolvers.pagination()
+	coursePagination: courseModelTC.mongooseResolvers.pagination(),
 
 });
 
