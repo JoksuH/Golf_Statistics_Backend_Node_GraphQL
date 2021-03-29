@@ -10,10 +10,10 @@ RoundTC.addRelation(
 	'course',
 	{
 	  resolver: () => courseModelTC.mongooseResolvers.findById(),
-	  prepareArgs: { // resolver `findByIds` has `_ids` arg, let provide value to it
+	  prepareArgs: { 
 		_id: (source) => source.coursename,
 	  },
-	  projection: { coursename: true }, // point fields in source object, which should be fetched from DB
+	  projection: { coursename: true },
 	}
   );
 

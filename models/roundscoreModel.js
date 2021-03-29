@@ -16,6 +16,7 @@ const roundScore = mongoose.model(
         penalties: { type: [String] },
         greenbunkers: { type: [String] },
         fwbunkers: { type: [String] },
+        tee: { type: String },
         date: { type: Date, default: Date.now },
     })
 )
